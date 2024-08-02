@@ -10,5 +10,13 @@ export class UserRepository{
     console.error("There is an error" + error.message)
   }
   }
+
+  async getById(id){
+    try {
+       const [rows] = await this.pool.query('SELECT * FROM users WHERE id = ?', id)
+    } catch (error) {
+      
+    }
+  }
   
 }
